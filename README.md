@@ -14,6 +14,16 @@ php artisan serve
 
 Buka alamat yang ditampilkan oleh `php artisan serve`. Jika `.env` belum pernah dibuat, perintah Composer Laravel biasanya membuatnya saat instalasi awal. Project memakai SQLite secara default.
 
+## Menyiapkan versi statis untuk Vercel
+
+Website ini tidak memakai backend atau database untuk halaman portofolionya. Untuk Vercel, buat hasil HTML statis beserta asetnya:
+
+```powershell
+npm run export:static
+```
+
+Folder `vercel-static` menjadi sumber situs statis. Saat mengimpor repo di Vercel, atur **Root Directory** ke `vercel-static`; tidak perlu build command. Jika isi halaman atau aset berubah, jalankan perintah export lagi sebelum commit dan push ke GitHub.
+
 ## Bagian website
 
 - Beranda dan spesialisasi web, mobile, serta machine learning.
